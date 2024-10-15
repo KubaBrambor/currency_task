@@ -30,7 +30,7 @@ import type { Currency } from '@/types'
 
 const props = defineProps<{
   modelValue: Currency | null
-  options: Currency[]
+  options: Currency[] | null
 }>()
 
 const emit = defineEmits(['update:modelValue'])
