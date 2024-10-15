@@ -11,11 +11,13 @@
         type="text"
         v-model="amount"
         size="large"
-        :placeholder="
-          fromCurrency ? `Provide amount of ${fromCurrency.name}` : ''
-        "
+        placeholder="For example: 200.50"
         :disabled="!fromCurrency"
+        aria-describedby="amount-help"
       />
+      <small id="amount-help"
+        >Enter amount value that you want to convert.</small
+      >
     </div>
     <Button label="Convert" @click="convertCurrency" />
     <div class="convertedAmountWrapper">
@@ -88,6 +90,11 @@ const convertCurrency = async (): Promise<void> => {
 .amountWrapper input,
 .convertedAmountWrapper input {
   width: 300px;
+}
+
+.amountWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .convertedAmountWrapper {
