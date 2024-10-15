@@ -40,7 +40,7 @@ const currencies = ref<Currency[] | null>(null)
 const fromCurrency = ref<Currency | null>(null)
 const toCurrency = ref<Currency | null>(null)
 const amount = ref<string>('')
-const convertedAmount = ref<number>('')
+const convertedAmount = ref<number | null>(null)
 const { get } = useFetchAPI(
   'https://api.currencybeacon.com',
   import.meta.env.VITE_APP_API_KEY,
