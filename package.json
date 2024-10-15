@@ -15,6 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@primevue/themes": "^4.1.0",
     "pinia": "^2.2.4",
     "primevue": "^4.1.0",
     "vue": "^3.5.12",
