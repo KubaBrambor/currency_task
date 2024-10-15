@@ -1,5 +1,7 @@
 # currency_conversion_app
 
+(!)For extended docs look at repository Wiki page.(!)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
