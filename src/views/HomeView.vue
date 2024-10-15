@@ -41,11 +41,11 @@ const fromCurrency = ref<Currency | null>(null)
 const toCurrency = ref<Currency | null>(null)
 const amount = ref<string>('')
 const convertedAmount = ref<number>('')
-
 const { get } = useFetchAPI(
   'https://api.currencybeacon.com',
   import.meta.env.VITE_APP_API_KEY,
 )
+
 onMounted(async () => {
   try {
     const data = await get<CurrenciesResponse>('/v1/currencies', '&type=fiat')
