@@ -5,7 +5,7 @@
     filter
     optionLabel="name"
     placeholder="Select currency"
-    class="w-full md:w-56"
+    class="selectElement"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center">
@@ -52,3 +52,9 @@ watch(internalValue, newValue => {
   updateValue(newValue)
 })
 </script>
+
+<style scoped>
+.selectElement {
+  width: 300px;
+}
+</style>
