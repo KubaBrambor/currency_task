@@ -4,7 +4,7 @@ export function useFetchAPI(baseURL: string) {
   const loading = ref<boolean>(false)
   const error = ref<string | null>(null)
 
-  const get = async <T>(endpoint: string): Promise<T | null> => {
+  const get = async <T>(endpoint: string): Promise<T> => {
     loading.value = true
     error.value = null
 
@@ -20,10 +20,11 @@ export function useFetchAPI(baseURL: string) {
     } catch (err: unknown) {
       if (err instanceof Error) {
         error.value = err.message
+        throw err
       } else {
         error.value = 'An unknown error occurred'
+        throw new Error(error.value)
       }
-      return null
     } finally {
       loading.value = false
     }
