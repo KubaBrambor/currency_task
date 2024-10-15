@@ -1,1 +1,1 @@
-export * from './currencyTypes'
+export * from './currencyBeaconTypes'
