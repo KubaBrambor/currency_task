@@ -1,5 +1,7 @@
 # currency_conversion_app
 
+(!)For extended docs look at repository Wiki page.(!)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
@@ -19,6 +21,10 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 ```sh
 npm install
 ```
+
+## Add local .env for api key
+
+Create .env file with variable prefixed with VITE\_ for example: VITE_APP_API_KEY=your_api_key
 
 ### Compile and Hot-Reload for Development
 
