@@ -17,8 +17,12 @@ export function useFetchAPI(baseURL: string) {
 
       const data = (await response.json()) as T
       return data
-    } catch (err) {
-      error.value = err.message
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        error.value = err.message
+      } else {
+        error.value = 'An unknown error occurred'
+      }
       return null
     } finally {
       loading.value = false
