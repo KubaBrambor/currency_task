@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export function useFetchAPI(baseURL: string) {
+export function useFetchAPI(baseURL: string, apiKey: string) {
   const loading = ref<boolean>(false)
   const error = ref<string | null>(null)
 
@@ -9,7 +9,7 @@ export function useFetchAPI(baseURL: string) {
     error.value = null
 
     try {
-      const response = await fetch(`${baseURL}${endpoint}`)
+      const response = await fetch(`${baseURL}${endpoint}?api_key=${apiKey}`)
 
       if (!response.ok) {
         throw new Error(`Error: ${response.status} ${response.statusText}`)
