@@ -5,7 +5,7 @@
     filter
     optionLabel="name"
     placeholder="Select currency"
-    class="w-full md:w-56"
+    class="selectElement"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center">
@@ -30,7 +30,7 @@ import type { Currency } from '@/types'
 
 const props = defineProps<{
   modelValue: Currency | null
-  options: Currency[]
+  options: Currency[] | null
 }>()
 
 const emit = defineEmits(['update:modelValue'])
@@ -52,3 +52,9 @@ watch(internalValue, newValue => {
   updateValue(newValue)
 })
 </script>
+
+<style scoped>
+.selectElement {
+  width: 300px;
+}
+</style>

@@ -4,12 +4,14 @@ export function useFetchAPI(baseURL: string, apiKey: string) {
   const loading = ref<boolean>(false)
   const error = ref<string | null>(null)
 
-  const get = async <T>(endpoint: string): Promise<T> => {
+  const get = async <T>(endpoint: string, params?: string): Promise<T> => {
     loading.value = true
     error.value = null
 
     try {
-      const response = await fetch(`${baseURL}${endpoint}?api_key=${apiKey}`)
+      const response = await fetch(
+        `${baseURL}${endpoint}?api_key=${apiKey}${params}`,
+      )
 
       if (!response.ok) {
         throw new Error(`Error: ${response.status} ${response.statusText}`)
